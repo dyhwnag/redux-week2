@@ -44,6 +44,7 @@ const Form = () => {
     const onClickHandler = () => {
         if (title === '' && desc === '') return;
 
+        let maxId = todoData.reduce((pre, cur) => pre > cur.id ? pre + 1 : cur.id + 1, 1)
 
         dispatch(addTodo(
             {
